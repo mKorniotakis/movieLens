@@ -1,2 +1,3 @@
+movies/staticFiles-local/* linguist-vendored
 * linguist-vendored
 *.js linguist-vendored=false
