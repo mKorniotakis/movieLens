@@ -26,7 +26,8 @@ SECRET_KEY = '#_qdz_m87m$(ky9@c&c7tv39xikb)20v4htl%_@(ndqhbi(25s'
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    'localhost'
+    'localhost',
+    '127.0.0.1'
 ]
 
 
@@ -42,6 +43,7 @@ INSTALLED_APPS = [
     'movies_app',
     'rest_framework',
     'react',
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
@@ -52,6 +54,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
 ]
 
 ROOT_URLCONF = 'movies.urls'
@@ -133,3 +136,14 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
+
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "react/static"),
+]
+
+STATIC_ROOT = os.path.join(BASE_DIR, "staticFiles-local")
+
+CORS_ORIGIN_WHITELIST = (
+    'http://localhost:8000',
+    'http://127.0.0.1:8000',
+)
