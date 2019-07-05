@@ -23,5 +23,4 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     url(r'^api-auth/', include('rest_framework.urls')),
     url(r'^movies/', include('movies_app.urls')),
-    path('react/', include('react.urls')),
 ]
